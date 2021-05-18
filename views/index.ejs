@@ -1,0 +1,97 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .flex-parent {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+button.margin-right {
+  margin-right: 20px;
+}
+    </style>
+</head>
+<body>
+    <center>
+
+<h1>Welcome To Human Heart Simulator </h1>
+<h2 id="status">Please Start Game</h2>
+
+
+<img src="https://s3.gifyu.com/images/yt1s.com---Heartbeat-flatline.gif" alt="this slowpoke moves"   width="1000" height="500"/>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+<!--<div class="flex-parent jc-center">
+    <button type="button" class="btn btn-primary"  class="green margin-right" onclick="textToAudio()" id="butt">Start Game</button>
+
+
+    <button type="button" class="btn btn-danger" id="shock">Give Shock</button>
+</div>-->
+
+<div class="flex-parent jc-center">
+    <button type="submit" class="
+    green margin-right btn btn-primary" onclick="textToAudio()" id="butt">Start Game </button>
+    <button type="submit" class="magenta btn btn-danger" id="shock" onclick="shock();">Give shock</button>
+  </div>    
+</center>
+
+<script>
+                document.getElementById("shock").disabled = true;
+                var flo =Math.floor(Math.random() * 50); 
+console.log(flo);
+   function textToAudio() {
+
+    var clicked = false;
+document.getElementById("status").innerHTML="Heartbeat is Getting Low Give a shock treatment Fast Time is running"
+       alert("Hi One patient has come his heart is getting down do something to save him You have some tools to save him check it")
+              /*  let msg = "Hi One patient has come his heart is getting down do something to save him You have some tools to save him check it please Give a shock fast"
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text = msg;
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+                clicked = true;
+*/
+                button= document.getElementById("butt").innerHTML = "The Simulator Has started working";
+                document.getElementById("butt").disabled = true;
+                document.getElementById("shock").disabled = false;
+
+          }
+          function shock() {
+          //  alert("Enter Shock value-Note Do not Give a shock more than the value of 50 dbs if you give the shock more than the 50 dbs pation will die and you have to go to the jail")
+         var shocks=window.prompt("Enter Shock value-Note Do not Give a shock more than the value of 50 dbs if you give the shock more than the 50 dbs pation will die and you have to go to the jail","");
+         if (shocks>50) {
+  document.getElementById("status").innerHTML="Pation Died";
+alert("Pation Died Game Over");
+window.location.href = "http://localhost:3000/GameOver";
+}
+else if (shocks==flo) {
+  alert("Great Heart beat is now normal you have saved the person ")
+  window.location.href = "http://localhost:3000/YouAreTheWinner";
+
+}
+else{
+alert("Heart beat is Getting down try with any other number but less than 50")
+
+}
+
+         }
+</script>
+</body>
+
+    </html>
